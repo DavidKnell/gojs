@@ -59,8 +59,8 @@ void *newJSContext(JSRuntime *rt) {
 void destroyJSContext(JSContext *cx) {
     printf("DC\n");
     JS_DestroyContext(cx);
-    printf("DC end\n")
-    }
+    printf("DC end\n");
+}
 
 void destroyJSRuntime(JSRuntime *rt, JSContext *cx) {
     JS_DestroyRuntime(rt);

@@ -22,11 +22,10 @@ func Init() (*JS) {
 func NewContext(js *JS) (newjs *JS) {
   newjs = new(JS)
   newjs.rt = js.rt
-  fmt.Printf("%v\n%v", js, newjs)
   newjs.cx = C.newJSContext(newjs.rt)
   newjs.gl = C.newJSGlobal(newjs.cx)
   newjs.callback = make(map[string] func())
-  fmt.Printf("%v\n%v", js, newjs)
+  fmt.Printf("New context: %v\n", newjs)
   return newjs
 }
 
